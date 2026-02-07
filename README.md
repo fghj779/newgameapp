@@ -14,5 +14,16 @@ A modular 2D colony simulation prototype in Python.
 - `tests/`: Stage-by-stage stability tests.
 - `docs/IMPLEMENTATION_ROADMAP.md`: Build plan and milestones.
 
+## Run
+- Headless demo:
+  - `PYTHONPATH=src python3 -m orbital_colony.main`
+- Test suite:
+  - `PYTHONPATH=src python3 -m unittest -v`
+
 ## Current Stage
-Scaffold + roadmap only.
+Core systems implemented:
+- `core_physics`: N-body gravity, semi-implicit Euler integration, stability index.
+- `economy_engine`: supply-demand pricing, volatility, buy/sell order API.
+- `npc_ai`: worker drone FSM (`IDLE`, `SEEK_RESOURCE`, `GATHER`, `DELIVER`, `REPAIR`, `RECHARGE`).
+- `rendering_layer`: scene adapter + headless-safe renderer with optional Pygame surface draw.
+- Integration runtime in `main.py` with fixed-step simulation.
